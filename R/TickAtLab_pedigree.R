@@ -1,6 +1,6 @@
 #' TickAtLab_pedigree
 #' 
-#' A convenience function for easily converting a TickAtLab table into a \link{kinship2::pedigree}.
+#' A convenience function for easily converting a TickAtLab table into a \link[kinship2::pedigree]{kinship2::pedigree}.
 #' 
 #' @param df data.frame containing pedigree information as exported from tick(at)lab
 #' @param features column names from data frame or either of: "Task", short for "HasTask","HadTask"; "Tasks", short for "HasTask","HadTask","ParticipatesInActiveMating"; NULL. All columns need to contain data convertible into logical
