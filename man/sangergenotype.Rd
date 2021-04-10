@@ -36,5 +36,7 @@ Data Frame with list of mice and respective genotypes
 This function retrieves ab1 files either from a link or from a directory and compares the sequence to a reference sequence. it interprets signal amplitudes in abi traces and can thereby fidderentiate between wt, hom and het.
 }
 \examples{
+\dontrun{
 sangergenotype(dir="D:\\\\", link="http://www.x.zip",wtseq="ACTGAAAA",mutseq="ACCGAAAA", revcomp = TRUE, cutoff = 0.2)
+} 
 }

@@ -11,7 +11,9 @@
 #' @param pattern A regular expression that matches a unique pattern in the file name (like the mouse name). Could be e.g. \code{"K[0-9]{4}+"} or \code{"[0-9]{1,2}_[0-9]{1,2}[a-z]{1}+"}.
 #' @return Data Frame with list of mice and respective genotypes
 #' @examples
+#' \dontrun{
 #' sangergenotype(dir="D:\\", link="http://www.x.zip",wtseq="ACTGAAAA",mutseq="ACCGAAAA", revcomp = TRUE, cutoff = 0.2)
+#' } 
 #' @importFrom Biostrings reverseComplement DNAString
 #' @importFrom sangerseqR primarySeq secondarySeq makeBaseCalls
 #' @importFrom stringr str_detect
