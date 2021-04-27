@@ -17,5 +17,5 @@ An object of class \code{pedigree} or \code{pedigreeList}
   famid id findex mindex sex  affected status relation
 }
 \description{
-A convenience function for easily converting a TickAtLab table into a \link[kinship2::pedigree]{kinship2::pedigree}.
+A convenience function for easily converting a TickAtLab table into a \link[kinship2:pedigree]{kinship2:pedigree}.
 }

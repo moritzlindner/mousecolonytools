@@ -12,6 +12,5 @@ TickAtLab_SubsetByFamily<-function(df,Stamm){
                  df$Vater[df$Stamm==Stamm]))
   incl<-incl[!is.na(incl)]
   incl<-incl[incl!=""]
-  print(incl)
   df[(mousedb$`Tier-ID1` %in% incl),]
 }
