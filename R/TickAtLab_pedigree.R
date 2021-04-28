@@ -5,6 +5,7 @@
 #' @param df data.frame containing pedigree information as exported from tick(at)lab
 #' @param features column names from data frame or either of: "Task", short for "HasTask","HadTask"; "Tasks", short for "HasTask","HadTask","ParticipatesInActiveMating"; NULL. All columns need to contain data convertible into logical
 #' @inherit kinship2::pedigree return 
+#' @importFrom kinship2 pedigree
 #' @export
 TickAtLab_pedigree<-function(df,features=NULL){
   

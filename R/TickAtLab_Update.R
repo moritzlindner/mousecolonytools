@@ -6,7 +6,7 @@
 #' @param df.new Aata.frame in the "Tick@Lab format" containing the new data
 #' @return A data frame containing animal colony information. One row per animal. 
 #' @export
-TickAtLab_Update<-function(df=mousedb,df.new=TickAtLab_Import()){
+TickAtLab_Update<-function(df,df.new=TickAtLab_Import()){
   upd<-df.new[rownames(df.new) %in% rownames(df),]
   add<-df.new[!(rownames(df.new) %in% rownames(df)),]
   hadtask<-df[,c("HasTask")]

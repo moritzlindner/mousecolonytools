@@ -4,7 +4,7 @@
 \alias{TickAtLab_Update}
 \title{TickAtLab_Update}
 \usage{
-TickAtLab_Update(df = mousedb, df.new = TickAtLab_Import())
+TickAtLab_Update(df, df.new = TickAtLab_Import())
 }
 \arguments{
 \item{df}{Original data.frame in the "Tick@Lab format"}

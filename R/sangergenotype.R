@@ -15,9 +15,11 @@
 #' sangergenotype(dir="D:\\", link="http://www.x.zip",wtseq="ACTGAAAA",mutseq="ACCGAAAA", revcomp = TRUE, cutoff = 0.2)
 #' } 
 #' @importFrom Biostrings reverseComplement DNAString
-#' @importFrom sangerseqR primarySeq secondarySeq makeBaseCalls
+#' @importFrom sangerseqR primarySeq secondarySeq makeBaseCalls readsangerseq
 #' @importFrom stringr str_detect
 #' @importFrom utils txtProgressBar
+#' @importFrom utils download.file
+#' @importFrom zip unzip
 #' @export
 sangergenotype<-function (dir = choose.dir(), link = "", wtseq = "", mutseq = "",
                           revcomp = TRUE, cutoff = 0.33, pattern = "K[0-9]{4}+") {
