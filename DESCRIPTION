@@ -1,5 +1,5 @@
 Package: mousecolonytools
-Title: A collection of tools to facilitate genotyping and mouse colony management.
+Title: A collection of tools to facilitate genotyping and mouse colony management
 Version: 0.9
 Authors@R: person("Moritz", "Lindner", email = "moritz@lindnerlab.de", role = c("aut", "cre"))
 Description: A collection of tools to facilitate genotyping and mouse colony management.
@@ -8,4 +8,4 @@ Depends: Biostrings,sangerseqR,stringr,utils,rstudioapi,readxl,kinship2,ggpubr,p
 Encoding: UTF-8
 LazyData: true
 biocViews:
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.0

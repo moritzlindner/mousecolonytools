@@ -4,18 +4,53 @@
 \alias{TickAtLab_pedigree}
 \title{TickAtLab_pedigree}
 \usage{
-TickAtLab_pedigree(df, features = NULL)
+TickAtLab_pedigree(
+  df,
+  defining.colnames = list(id = "Tier.ID1", dadid = "Vater", momid = "Mutter", sex =
+    "G", status = "IsDead"),
+  features = NULL
+)
 }
 \arguments{
-\item{df}{data.frame containing pedigree information as exported from tick(at)lab}
+\item{df}{A data.frame containing pedigree information. It should include columns for 'Tier.ID1', 'Vater', 'Mutter', 'G', and 'IsDead' by default. You can change the column names by specifying the 'defining.colnames' argument.}
 
-\item{features}{column names from data frame or either of: "Task", short for "HasTask","HadTask"; "Tasks", short for "HasTask","HadTask","ParticipatesInActiveMating"; NULL. All columns need to contain data convertible into logical}
+\item{defining.colnames}{A list specifying the column names for 'id', 'dadid', 'momid', 'sex', and 'status' in the input data.frame. The default values correspond to the most commonly used column names.}
+
+\item{affected}{additional column names from data frame or either of: "Task", short for "HasTask","HadTask"; "Tasks", short for "HasTask","HadTask","ParticipatesInActiveMating"; NULL, indicating affection status. All columns need to contain data convertible into logical}
 }
 \value{
-An object of class \code{pedigree} or \code{pedigreeList}
-  Containing the following items:
-  famid id findex mindex sex  affected status relation
+An object of class \code{pedigree} or \code{pedigreeList} Containing the following items:
+ famid id findex mindex sex  affected status relation
+ @examples
+   data(minnbreast)
+   bpeds <- with(minnbreast,
+   pedigree(id, fatherid, motherid, sex, affected=proband, famid=famid))
+   bped.id8 <- bpeds['8']
+   print(bped.id8)
+   ## show this pedigree with mixed zygosity quadruplets
+   rel8 <- data.frame(id1=c(137,138,139), id2=c(138,139,140), code=c(1,2,2))
+   bped.id8 <- with(minnbreast[minnbreast$famid==8,],
+        pedigree(id, fatherid, motherid, sex, affected=proband, relation=rel8))
+   print(bped.id8)
 }
 \description{
 A convenience function for easily converting a TickAtLab table into a \link[kinship2:pedigree]{kinship2:pedigree}.
+}
+\details{
+The function ensures that the input data.frame is converted to the correct format expected by the kinship2 package. It checks and converts specific columns to the required data types ('id', 'dadid', 'momid' to character and 'status' to numeric). It also checks that the 'sex' column only contains the values 'm' (male) and/or 'f' (female).
+}
+\examples{
+# Sample data.frame containing pedigree information
+my_df <- data.frame(
+  Tier.ID1 = c("Ind1", "Ind2", "Ind3"),
+  Vater = c("V1", NA, "V1"),
+  Mutter = c("M1", NA, "M2"),
+  G = c("m", "f", "f"),
+  IsDead = c(0, 1, 0)
+)
+# Convert data.frame to pedigree object
+pedigree_obj <- TickAtLab_pedigree(df = my_df)
+}
+\author{
+Moritz Lindner
 }

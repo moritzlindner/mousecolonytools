@@ -5,8 +5,8 @@
 \title{TickAtLab_Import}
 \usage{
 TickAtLab_Import(
-  filename = selectFile(caption = "Select tick@lab XLS File", filter =
-    "XLS Files (*.xls)", existing = TRUE)
+  filename = selectFile(caption = "Select tick@lab XLSX File", filter =
+    "XLS Files (*.xlsx)", existing = TRUE)
 )
 }
 \arguments{
